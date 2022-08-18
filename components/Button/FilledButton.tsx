@@ -5,14 +5,20 @@ type Props = {
 	type?: "button" | "submit" | "reset" | undefined;
 	children: ReactNode;
 	onClick?: () => void;
+	className?: string;
 };
 
-export default function FilledButton({ type, children, onClick }: Props) {
+export default function FilledButton({
+	type,
+	children,
+	onClick,
+	className,
+}: Props) {
 	return (
 		<motion.button
 			type={type}
 			onClick={onClick}
-			className="px-5 py-3 font-medium text-white bg-blue-500 rounded-lg cursor-pointer"
+			className={`px-5 py-3 font-medium text-white bg-blue-500 rounded-lg cursor-pointer ${className}`}
 			whileHover={{
 				scale: 1.05,
 				opacity: 0.9,
