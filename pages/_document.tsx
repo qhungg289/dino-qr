@@ -9,6 +9,10 @@ export default function Document() {
 					rel="stylesheet"
 				/>
 				<meta name="description" content="Simple QR code generator" />
+				<meta
+					name="description"
+					content="Author: Hung Duong Quang @qhungg289"
+				/>
 			</Head>
 			<body className="container max-w-lg font-nunito">
 				<Main />
