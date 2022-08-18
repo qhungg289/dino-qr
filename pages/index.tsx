@@ -19,12 +19,12 @@ function Home() {
 	const qrCodeImg = useRef<HTMLImageElement>(null);
 
 	return (
-		<>
+		<div className="divide-y-2">
 			<Head>
 				<title>Dino QR</title>
 			</Head>
 
-			<div>
+			<div className="py-8">
 				<Hero />
 
 				<motion.form
@@ -77,7 +77,7 @@ function Home() {
 			<AnimatePresence>
 				{qrCodeUrl && (
 					<motion.div
-						className="my-8 flex flex-col gap-4"
+						className="py-8 flex flex-col gap-4"
 						initial={{ y: 200 }}
 						animate={{ y: 0 }}
 						exit={{ opacity: 0 }}
@@ -118,7 +118,7 @@ function Home() {
 					</motion.div>
 				)}
 			</AnimatePresence>
-		</>
+		</div>
 	);
 }
 
