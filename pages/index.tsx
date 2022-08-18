@@ -3,6 +3,7 @@ import Head from "next/head";
 import { useState, useRef } from "react";
 import QRCode from "qrcode";
 import { saveAs } from "file-saver";
+import { motion, AnimatePresence } from "framer-motion";
 
 import Hero from "../components/Hero/Hero";
 import Label from "../components/Form/Label";
@@ -26,7 +27,7 @@ function Home() {
 			<div>
 				<Hero />
 
-				<form
+				<motion.form
 					onSubmit={(e) => {
 						e.preventDefault();
 
@@ -38,6 +39,8 @@ function Home() {
 							.catch((e) => console.error(e));
 					}}
 					className="flex flex-col gap-4"
+					initial={{ opacity: 0 }}
+					animate={{ opacity: 1 }}
 				>
 					<div className="relative">
 						<Label htmlFor="input">Your Input</Label>
@@ -68,25 +71,34 @@ function Home() {
 					</div>
 
 					<FilledButton type="submit">Create</FilledButton>
-				</form>
+				</motion.form>
 			</div>
 
-			{qrCodeUrl && (
-				<div className="my-8 flex flex-col gap-4">
-					<img
-						src={qrCodeUrl}
-						ref={qrCodeImg}
-						alt="Your QR Code"
-						className="rounded shadow-xl max-w-[15rem] sm:max-w-xs mx-auto hover:shadow-2xl focus:shadow-2xl transition-shadow"
-					/>
-
-					<FilledButton
-						onClick={() => saveAs(qrCodeImg.current?.src as string, "qr.jpeg")}
+			<AnimatePresence>
+				{qrCodeUrl && (
+					<motion.div
+						className="my-8 flex flex-col gap-4"
+						initial={{ y: 200 }}
+						animate={{ y: 0 }}
+						exit={{ y: 200 }}
 					>
-						Download
-					</FilledButton>
-				</div>
-			)}
+						<img
+							src={qrCodeUrl}
+							ref={qrCodeImg}
+							alt="Your QR Code"
+							className="rounded shadow-xl max-w-[15rem] sm:max-w-xs mx-auto hover:shadow-2xl focus:shadow-2xl transition-shadow"
+						/>
+
+						<FilledButton
+							onClick={() =>
+								saveAs(qrCodeImg.current?.src as string, "qr.jpeg")
+							}
+						>
+							Download
+						</FilledButton>
+					</motion.div>
+				)}
+			</AnimatePresence>
 		</>
 	);
 }
