@@ -77,7 +77,7 @@ function Home() {
 						src={qrCodeUrl}
 						ref={qrCodeImg}
 						alt="Your QR Code"
-						className="rounded shadow-xl max-w-xs mx-auto hover:shadow-2xl focus:shadow-2xl transition-shadow"
+						className="rounded shadow-xl max-w-[15rem] sm:max-w-xs mx-auto hover:shadow-2xl focus:shadow-2xl transition-shadow"
 					/>
 
 					<FilledButton
