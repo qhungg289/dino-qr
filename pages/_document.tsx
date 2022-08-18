@@ -9,7 +9,7 @@ export default function Document() {
 					rel="stylesheet"
 				/>
 			</Head>
-			<body className="container font-nunito">
+			<body className="container max-w-lg font-nunito">
 				<Main />
 				<NextScript />
 			</body>
