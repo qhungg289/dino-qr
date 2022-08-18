@@ -21,7 +21,7 @@ export default function SelectInput({
 			id={id ? id : name}
 			value={value}
 			onChange={onChange}
-			className="w-full p-3 mt-1 border-2 border-gray-200 rounded transition-colors"
+			className="w-full p-3 mt-1 border-2 border-gray-200 focus:border-emerald-500 focus:outline-none focus:ring-1 focus:ring-emerald-500 rounded transition-colors"
 		>
 			{options.map((option) => (
 				<option value={option.value} key={option.value}>
