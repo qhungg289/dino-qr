@@ -11,7 +11,7 @@ import SelectInput from "../components/Form/SelectInput";
 import FilledButton from "../components/Button/FilledButton";
 
 function Home() {
-	const [qrData, setQrData] = useState("");
+	const [qrCodeData, setQrCodeData] = useState("");
 	const [qrCodeWidth, setQrCodeWidth] = useState(500);
 	const [qrCodeUrl, setQrCodeUrl] = useState("");
 
@@ -30,7 +30,7 @@ function Home() {
 					onSubmit={(e) => {
 						e.preventDefault();
 
-						QRCode.toDataURL(qrData, {
+						QRCode.toDataURL(qrCodeData, {
 							type: "image/jpeg",
 							width: qrCodeWidth,
 						})
@@ -46,8 +46,8 @@ function Home() {
 							name="input"
 							required
 							placeholder="Put whatever you want in here..."
-							value={qrData}
-							onChange={(e) => setQrData(e.target.value)}
+							value={qrCodeData}
+							onChange={(e) => setQrCodeData(e.target.value)}
 						/>
 					</div>
 
