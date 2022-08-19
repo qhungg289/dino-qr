@@ -1,8 +1,8 @@
 import { ChangeEvent } from "react";
 
 type Props = {
-	name: string;
-	id?: string;
+	name?: string;
+	id: string;
 	value: number;
 	onChange: (e: ChangeEvent<HTMLSelectElement>) => void;
 	options: { label: string; value: number }[];
@@ -17,8 +17,8 @@ export default function SelectInput({
 }: Props) {
 	return (
 		<select
-			name={name}
-			id={id ? id : name}
+			name={name ? name : id}
+			id={id}
 			value={value}
 			onChange={onChange}
 			className="w-full p-3 mt-1 border-2 border-gray-200 focus:border-emerald-500 focus:outline-none focus:ring-1 focus:ring-emerald-500 rounded transition-colors"

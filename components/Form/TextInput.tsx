@@ -1,8 +1,8 @@
 import { ChangeEvent } from "react";
 
 type Props = {
-	name: string;
-	id?: string;
+	name?: string;
+	id: string;
 	required?: boolean;
 	placeholder?: string;
 	value: string;
@@ -20,8 +20,8 @@ export default function TextInput({
 	return (
 		<input
 			type="text"
-			name={name}
-			id={id ? id : name}
+			name={name ? name : id}
+			id={id}
 			required={required}
 			placeholder={placeholder}
 			value={value}
