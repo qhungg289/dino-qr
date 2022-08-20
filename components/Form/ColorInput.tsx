@@ -57,7 +57,10 @@ export default function ColorInput({ name, id, value, onChange }: Props) {
 
 						<button
 							className="text-emerald-600 font-bold px-5 py-3 rounded-lg hover:bg-emerald-100 transition-colors"
-							onClick={() => setIsPickerOpen(false)}
+							onClick={(e) => {
+								e.preventDefault();
+								setIsPickerOpen(false);
+							}}
 						>
 							Done
 						</button>
