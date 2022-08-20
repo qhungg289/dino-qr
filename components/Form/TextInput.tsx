@@ -26,7 +26,7 @@ export default function TextInput({
 			placeholder={placeholder}
 			value={value}
 			onChange={onChange}
-			className="w-full p-3 mt-1 border-2 border-gray-200 focus:border-emerald-500 focus:outline-none focus:ring-1 focus:ring-emerald-500 rounded transition-colors"
+			className="w-full p-3 mt-1 border-2 border-gray-200 focus:border-emerald-500 focus:outline-none focus:ring-1 focus:ring-emerald-500 rounded-lg transition-colors"
 		/>
 	);
 }
