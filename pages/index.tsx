@@ -16,7 +16,7 @@ function Home() {
 	const [qrCodeData, setQrCodeData] = useState("");
 	const [qrCodeWidth, setQrCodeWidth] = useState(500);
 	const [qrCodeColorDark, setQrCodeColorDark] = useState("#000000");
-	const [qrCodeColorLight, setQrCodeColorLight] = useState("#FFFFFF");
+	const [qrCodeColorLight, setQrCodeColorLight] = useState("#ffffff");
 	const [qrCodeUrl, setQrCodeUrl] = useState("");
 
 	const qrCodeImg = useRef<HTMLImageElement>(null);
@@ -82,12 +82,12 @@ function Home() {
 							<Label htmlFor="color">Color</Label>
 
 							{qrCodeColorDark !== "#000000" ||
-							qrCodeColorLight !== "#FFFFFF" ? (
+							qrCodeColorLight !== "#ffffff" ? (
 								<button
 									onClick={(e) => {
 										e.preventDefault();
 										setQrCodeColorDark("#000000");
-										setQrCodeColorLight("#FFFFFF");
+										setQrCodeColorLight("#ffffff");
 									}}
 									className="text-emerald-600 font-bold"
 								>
