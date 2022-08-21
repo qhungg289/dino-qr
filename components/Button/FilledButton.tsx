@@ -18,7 +18,7 @@ export default function FilledButton({
 		<motion.button
 			type={type}
 			onClick={onClick}
-			className={`px-5 py-3 border border-emerald-400 font-medium text-white bg-emerald-600 rounded-lg cursor-pointer ${className}`}
+			className={`flex justify-center gap-3 items-center px-5 py-3 border border-emerald-400 font-medium text-white bg-emerald-600 rounded-lg cursor-pointer ${className}`}
 			whileHover={{
 				scale: 1.05,
 				opacity: 0.9,
