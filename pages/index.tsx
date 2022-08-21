@@ -96,7 +96,7 @@ function Home() {
 							) : null}
 						</div>
 
-						<div className="flex justify-between">
+						<div className="flex gap-2 justify-between">
 							<ColorInput
 								id="color"
 								value={qrCodeColorDark}
