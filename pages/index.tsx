@@ -69,7 +69,7 @@ function Home() {
 							value={qrCodeWidth}
 							onChange={(e) => setQrCodeWidth(Number(e.target.value))}
 							options={[
-								{ label: "300 x 300", value: 300 },
+								{ label: "250 x 250", value: 250 },
 								{ label: "500 x 500", value: 500 },
 								{ label: "1000 x 1000", value: 1000 },
 								{ label: "2000 x 2000", value: 2000 },
