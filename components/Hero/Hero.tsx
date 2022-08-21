@@ -7,7 +7,9 @@ export default function Hero() {
 			initial={{ y: -300 }}
 			animate={{ y: 0 }}
 		>
-			<h1 className="text-6xl text-emerald-600 font-bold">Dino QR</h1>
+			<h1 className="text-6xl font-bold underline underline-offset-[14px] decoration-wavy decoration-emerald-500 decoration-2">
+				Dino QR
+			</h1>
 			<p className="text-gray-500 text-sm">
 				Free & Open source QR code generator
 			</p>
