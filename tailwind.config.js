@@ -7,7 +7,7 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        nunito: ['Nunito', 'sans-serif']
+        "space-grotesk": ['Space Grotesk', 'sans-serif']
       }
     },
     container: { center: true, padding: "2rem" }
