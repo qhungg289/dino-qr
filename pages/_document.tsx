@@ -5,7 +5,11 @@ export default function Document() {
 		<Html lang="en">
 			<Head>
 				<link
-					href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap"
+					href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@700&display=swap"
+					rel="stylesheet"
+				></link>
+				<link
+					href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap"
 					rel="stylesheet"
 				></link>
 				<meta
@@ -13,7 +17,7 @@ export default function Document() {
 					content="Simple QR code generator by @qhungg289"
 				/>
 			</Head>
-			<body className="container max-w-lg font-space-grotesk">
+			<body className="container max-w-lg font-inter relative">
 				<Main />
 				<NextScript />
 			</body>
