@@ -11,6 +11,7 @@ import TextInput from "../components/Form/TextInput";
 import SelectInput from "../components/Form/SelectInput";
 import ColorInput from "../components/Form/ColorInput";
 import FilledButton from "../components/Button/FilledButton";
+import Notification from "../components/Feedback/Notification";
 
 function Home() {
 	const [qrCodeData, setQrCodeData] = useState("");
@@ -19,6 +20,9 @@ function Home() {
 	const [qrCodeColorLight, setQrCodeColorLight] = useState("#ffffff");
 	const [qrCodeUrl, setQrCodeUrl] = useState("");
 
+	const [isSuccessNotiOpen, setIsSuccessNotiOpen] = useState(false);
+	const [isErrorNotiOpen, setIsErrorNotiOpen] = useState(false);
+
 	const qrCodeImg = useRef<HTMLImageElement>(null);
 
 	return (
@@ -26,6 +30,24 @@ function Home() {
 			<Head>
 				<title>Dino QR</title>
 			</Head>
+
+			{isSuccessNotiOpen && (
+				<Notification
+					title="Success"
+					content="Your QR code was generated successfully"
+					type="success"
+					closeAction={() => setIsSuccessNotiOpen(false)}
+				/>
+			)}
+
+			{isErrorNotiOpen && (
+				<Notification
+					title="Error"
+					content="Something went wrong"
+					type="error"
+					closeAction={() => setIsErrorNotiOpen(false)}
+				/>
+			)}
 
 			<div className="py-8">
 				<Hero />
@@ -42,8 +64,14 @@ function Home() {
 								light: qrCodeColorLight,
 							},
 						})
-							.then((url) => setQrCodeUrl(url))
-							.catch((e) => console.error(e));
+							.then((url) => {
+								setQrCodeUrl(url);
+								setIsSuccessNotiOpen(true);
+							})
+							.catch((e) => {
+								setIsErrorNotiOpen(true);
+								console.error(e);
+							});
 					}}
 					className="flex flex-col gap-4"
 					initial={{ opacity: 0 }}
@@ -144,6 +172,7 @@ function Home() {
 								onClick={() => {
 									setQrCodeData("");
 									setQrCodeUrl("");
+									setIsSuccessNotiOpen(false);
 								}}
 								className="font-medium px-5 py-3 border flex items-center justify-center rounded-lg bg-rose-100 hover:bg-rose-500 text-rose-500 hover:text-white transition-colors"
 							>
