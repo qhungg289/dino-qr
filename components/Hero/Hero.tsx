@@ -3,18 +3,18 @@ import { motion } from "framer-motion";
 export default function Hero() {
 	return (
 		<motion.div
-			className="h-52 flex flex-col items-center justify-center gap-6"
+			className="h-44 flex flex-col items-center justify-center gap-6"
 			initial={{ y: -300 }}
 			animate={{ y: 0 }}
 		>
-			<h1 className="text-6xl font-bold underline underline-offset-[14px] decoration-wavy decoration-emerald-500 decoration-2">
+			<h1 className="text-6xl font-bold font-space-grotesk underline underline-offset-[14px] decoration-wavy decoration-emerald-500 decoration-2">
 				Dino QR
 			</h1>
 			<p className="text-gray-500 text-sm">
-				Free & Open source QR code generator
+				Free & simple to use QR code generator
 			</p>
 
-			<div className="flex gap-4">
+			{/* <div className="flex gap-4">
 				<div className="w-6">
 					<a href="https://github.com/qhungg289/dino-qr">
 						<svg
@@ -38,7 +38,7 @@ export default function Hero() {
 						</svg>
 					</a>
 				</div>
-			</div>
+			</div> */}
 		</motion.div>
 	);
 }
