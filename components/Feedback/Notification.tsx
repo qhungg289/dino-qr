@@ -27,7 +27,7 @@ export default function Notification({
 		<motion.div
 			initial={{ x: 100 }}
 			animate={{ x: 0 }}
-			className="p-4 rounded-lg border bg-white shadow-lg flex items-center justify-between w-3/4 md:w-1/2 fixed right-2 top-2"
+			className="p-4 rounded-lg border bg-white shadow-lg flex items-center justify-between w-3/4 md:w-1/3 fixed right-2 top-2"
 		>
 			<div className="flex items-center gap-4">
 				{type === "success" && (
