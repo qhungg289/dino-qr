@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { createPortal } from "react-dom";
 import { motion } from "framer-motion";
 import { useEffect } from "react";
@@ -27,7 +28,8 @@ export default function Notification({
 		<motion.div
 			initial={{ x: 100 }}
 			animate={{ x: 0 }}
-			className="p-4 rounded-lg border bg-white shadow-lg flex items-center justify-between w-3/4 md:w-1/3 fixed right-2 top-2"
+			exit={{ x: 500 }}
+			className="p-4 rounded-lg border bg-white shadow-lg flex items-center justify-between w-3/4 md:w-1/3 fixed right-2 bottom-2"
 		>
 			<div className="flex items-center gap-4">
 				{type === "success" && (
@@ -36,7 +38,7 @@ export default function Notification({
 							xmlns="http://www.w3.org/2000/svg"
 							viewBox="0 0 24 24"
 							fill="currentColor"
-							className="w-8 h-8 text-white"
+							className="w-6 h-6 text-white"
 						>
 							<path
 								fillRule="evenodd"
@@ -53,7 +55,7 @@ export default function Notification({
 							xmlns="http://www.w3.org/2000/svg"
 							viewBox="0 0 24 24"
 							fill="currentColor"
-							className="w-8 h-8 text-white"
+							className="w-6 h-6 text-white"
 						>
 							<path
 								fillRule="evenodd"
@@ -65,8 +67,8 @@ export default function Notification({
 				)}
 
 				<div className="space-y-2">
-					{title && <p className="font-medium">{title}</p>}
-					<p className="text-gray-500">{content}</p>
+					{title && <p className="font-medium text-sm">{title}</p>}
+					<p className="text-gray-500 text-sm">{content}</p>
 				</div>
 			</div>
 			<button onClick={closeAction} className="text-4xl p-4">

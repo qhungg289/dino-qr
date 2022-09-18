@@ -31,23 +31,25 @@ function Home() {
 				<title>Dino QR</title>
 			</Head>
 
-			{isSuccessNotiOpen && (
-				<Notification
-					title="Success"
-					content="Your QR code was generated successfully"
-					type="success"
-					closeAction={() => setIsSuccessNotiOpen(false)}
-				/>
-			)}
+			<AnimatePresence>
+				{isSuccessNotiOpen && (
+					<Notification
+						title="Success"
+						content="Your QR code was generated successfully"
+						type="success"
+						closeAction={() => setIsSuccessNotiOpen(false)}
+					/>
+				)}
 
-			{isErrorNotiOpen && (
-				<Notification
-					title="Error"
-					content="Something went wrong"
-					type="error"
-					closeAction={() => setIsErrorNotiOpen(false)}
-				/>
-			)}
+				{isErrorNotiOpen && (
+					<Notification
+						title="Error"
+						content="Something went wrong"
+						type="error"
+						closeAction={() => setIsErrorNotiOpen(false)}
+					/>
+				)}
+			</AnimatePresence>
 
 			<div className="py-8">
 				<Hero />
